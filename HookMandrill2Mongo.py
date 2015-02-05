@@ -18,7 +18,7 @@ def hook():
             mongo[dbname][dbcoll].insert({"hook": mandrillhook})
         return "OK"
     except Exception, err:
-        return str(err)
+        return Response(status=400, response=str(err))
 
 
 if __name__ == '__main__':
